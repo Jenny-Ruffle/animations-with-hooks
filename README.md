@@ -1,2 +1,2 @@
-# animations-with-hooks
+# animations-library
 Different animations using react hooks
