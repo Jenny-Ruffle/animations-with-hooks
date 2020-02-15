@@ -1,56 +1,98 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { useState } from "react";
+import { createComponent } from "react-fela";
+import Link from "next/link";
+import { HeadingMedium } from "./StyledText";
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => ({
-  ...link,
-  key: `nav-link-${link.href}-${link.label}`,
-}))
+const navigationBar = () => ({
+  display: "flex",
+  height: "38px",
+  backgroundColor: "white"
+});
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+const NavigationBar = createComponent(navigationBar, "nav");
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+const DropdownCaret = () => (
+  <svg width="30" height="30">
+    <path d="M24 11.305l-7.997 11.39L8 11.305z" />
+  </svg>
+);
 
-export default Nav
+const dropdownArea = () => ({
+  float: "left",
+  overflow: "hidden"
+});
+
+const DropdownArea = createComponent(dropdownArea, "div");
+
+const dropdownButton = () => ({
+  border: "none",
+  outline: "none",
+  height: "30px",
+  padding: "0 0 0 4px",
+  ":hover": {
+    cursor: "pointer"
+  }
+});
+
+const DropdownButton = createComponent(dropdownButton, "button", ["onClick"]);
+
+const dropdownList = ({ open }) => ({
+  display: open ? "flex" : "none",
+  flexDirection: "column",
+  position: "absolute",
+  backgroundColor: "white",
+  minWidth: "250px",
+  boxShadow: "rgba(0, 0, 0, 0.1) 0px 10px 8px 0px",
+  zIndex: 20,
+  padding: "6px"
+});
+
+const DropdownList = createComponent(dropdownList, "div");
+
+const pageLink = () => ({
+  textDecoration: "none",
+  font: "12px/18px Verdana, serif",
+  padding: "4px",
+  color: "black",
+  ":hover": {
+    cursor: "pointer",
+    color: "#008f9c",
+    fontStyle: "bold"
+  }
+});
+
+const PageLink = createComponent(pageLink, "a", ["onClick"]);
+
+const headingLink = () => ({
+  cursor: "pointer",
+  textDecoration: "none"
+});
+
+const HeadingLink = createComponent(headingLink, "a", ["onClick"]);
+
+const Navigation = ({ animations }) => {
+  const [dropdownOpen, setDropdownOpen] = useState(0);
+  return (
+    <NavigationBar>
+      <Link href="/">
+        <HeadingLink>
+          <HeadingMedium>Animation Library</HeadingMedium>
+        </HeadingLink>
+      </Link>
+      <DropdownArea>
+        <DropdownButton onClick={e => setDropdownOpen(!dropdownOpen)}>
+          <DropdownCaret />
+        </DropdownButton>
+        <DropdownList open={dropdownOpen}>
+          {animations.map(item => (
+            <Link href={`/${item.animationKey}`}>
+              <PageLink>{item.navigationName}</PageLink>
+            </Link>
+          ))}
+        </DropdownList>
+      </DropdownArea>
+    </NavigationBar>
+  );
+};
+
+export default Navigation;
