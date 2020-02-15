@@ -88,10 +88,224 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Homepage/blockContainer.js":
+/*!***********************************************!*\
+  !*** ./components/Homepage/blockContainer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const blockContainer = () => ({
+  width: "100%",
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center"
+});
+
+const BlockContainer = Object(react_fela__WEBPACK_IMPORTED_MODULE_0__["createComponent"])(blockContainer, "div");
+/* harmony default export */ __webpack_exports__["default"] = (BlockContainer);
+
+/***/ }),
+
+/***/ "./components/Homepage/headerContent.js":
+/*!**********************************************!*\
+  !*** ./components/Homepage/headerContent.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _StyledText_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../StyledText/index */ "./components/StyledText/index.js");
+var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/components/Homepage/headerContent.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const headingContainer = () => ({
+  width: "100%",
+  textAlign: "center"
+});
+
+const HeadingContainer = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(headingContainer, "div");
+
+const HeaderContent = ({
+  heading,
+  subHeading
+}) => {
+  return __jsx(HeadingContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx(_StyledText_index__WEBPACK_IMPORTED_MODULE_2__["HeadingLarge"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, heading), __jsx(_StyledText_index__WEBPACK_IMPORTED_MODULE_2__["Paragraph"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, subHeading));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (HeaderContent);
+
+/***/ }),
+
+/***/ "./components/Homepage/homepageBlock.js":
+/*!**********************************************!*\
+  !*** ./components/Homepage/homepageBlock.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _StyledText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../StyledText */ "./components/StyledText/index.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/components/Homepage/homepageBlock.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const container = () => ({
+  padding: "20px 16px 10px",
+  margin: "10px",
+  border: "1px dotted gray",
+  width: "230px",
+  textAlign: "center",
+  textDecoration: "none",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  ":hover": {
+    cursor: "pointer",
+    border: "1px solid black"
+  }
+});
+
+const Container = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(container, "div", ["onClick"]);
+const alternatingFontColors = ["#ff9a17", "#bb77f7", "#67ab02", "#00c3c9", "#c90072"];
+
+const HomepageBlock = ({
+  index,
+  animationName,
+  animationDescription,
+  animationKey
+}) => {
+  const colorCode = index % 5;
+  const fontColor = alternatingFontColors[colorCode];
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: `/${animationKey}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx(_StyledText__WEBPACK_IMPORTED_MODULE_2__["HeadingMedium"], {
+    color: fontColor,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, animationName), __jsx(_StyledText__WEBPACK_IMPORTED_MODULE_2__["Paragraph"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, animationDescription)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (HomepageBlock);
+
+/***/ }),
+
+/***/ "./components/StyledText/index.js":
+/*!****************************************!*\
+  !*** ./components/StyledText/index.js ***!
+  \****************************************/
+/*! exports provided: HeadingLarge, HeadingMedium, Paragraph */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeadingLarge", function() { return HeadingLarge; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeadingMedium", function() { return HeadingMedium; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Paragraph", function() { return Paragraph; });
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const headingLarge = ({
+  color = "black"
+}) => ({
+  font: "26px/30px Georgia, serif",
+  padding: "0 0 16px 0",
+  margin: 0,
+  color
+});
+
+const HeadingLarge = Object(react_fela__WEBPACK_IMPORTED_MODULE_0__["createComponent"])(headingLarge, "h1");
+
+const headingMedium = ({
+  color = "black"
+}) => ({
+  font: "18px/22px Georgia, serif",
+  padding: "4px 0 16px 0",
+  margin: 0,
+  color,
+  textDecoration: "none"
+});
+
+const HeadingMedium = Object(react_fela__WEBPACK_IMPORTED_MODULE_0__["createComponent"])(headingMedium, "h1");
+
+const paragraph = () => ({
+  font: "12px/18px Verdana, serif",
+  padding: "0 0 16px 0",
+  margin: 0,
+  fontColor: "black"
+});
+
+const Paragraph = Object(react_fela__WEBPACK_IMPORTED_MODULE_0__["createComponent"])(paragraph, "p");
+
+/***/ }),
 
 /***/ "./components/nav.js":
 /*!***************************!*\
@@ -102,95 +316,231 @@ module.exports =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _StyledText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StyledText */ "./components/StyledText/index.js");
 var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/components/nav.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const links = [{
-  href: 'https://zeit.co/now',
-  label: 'ZEIT'
-}, {
-  href: 'https://github.com/zeit/next.js',
-  label: 'GitHub'
-}].map(link => _objectSpread({}, link, {
-  key: `nav-link-${link.href}-${link.label}`
-}));
 
-const Nav = () => __jsx("nav", {
-  className: "jsx-2055897931",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
-  },
-  __self: undefined
-}, __jsx("ul", {
-  className: "jsx-2055897931",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 14
-  },
-  __self: undefined
-}, __jsx("li", {
-  className: "jsx-2055897931",
+
+const navigationBar = () => ({
+  display: "flex",
+  height: "38px",
+  backgroundColor: "white"
+});
+
+const NavigationBar = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(navigationBar, "nav");
+
+const DropdownCaret = () => __jsx("svg", {
+  width: "30",
+  height: "30",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 15
   },
   __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-  href: "/",
+}, __jsx("path", {
+  d: "M24 11.305l-7.997 11.39L8 11.305z",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 16
   },
   __self: undefined
-}, __jsx("a", {
-  className: "jsx-2055897931",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 17
-  },
-  __self: undefined
-}, "Home"))), links.map(({
-  key,
-  href,
-  label
-}) => __jsx("li", {
-  key: key,
-  className: "jsx-2055897931",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 21
-  },
-  __self: undefined
-}, __jsx("a", {
-  href: href,
-  className: "jsx-2055897931",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 22
-  },
-  __self: undefined
-}, label)))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "2055897931",
-  __self: undefined
-}, "body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Avenir Next,Avenir, Helvetica,sans-serif;}nav.jsx-2055897931{text-align:center;}ul.jsx-2055897931{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}nav.jsx-2055897931>ul.jsx-2055897931{padding:4px 16px;}li.jsx-2055897931{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:6px 8px;}a.jsx-2055897931{color:#067df7;-webkit-text-decoration:none;text-decoration:none;font-size:13px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qLnJ1ZmZsZS9HaXRodWJQcm9qZWN0cy9hbmltYXRpb25zLXdpdGgtaG9va3MvY29tcG9uZW50cy9uYXYuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMEJnQixBQUdrQixBQUtTLEFBR0wsQUFJSSxBQUdKLEFBSUMsU0FqQlMsS0FrQkYsR0FQdkIsQ0FQQSw4Q0FlaUIsVUFaZSxBQU9kLEtBTWxCLFdBTEEsS0FkQSw4RkFPQSIsImZpbGUiOiIvVXNlcnMvai5ydWZmbGUvR2l0aHViUHJvamVjdHMvYW5pbWF0aW9ucy13aXRoLWhvb2tzL2NvbXBvbmVudHMvbmF2LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJ1xuXG5jb25zdCBsaW5rcyA9IFtcbiAgeyBocmVmOiAnaHR0cHM6Ly96ZWl0LmNvL25vdycsIGxhYmVsOiAnWkVJVCcgfSxcbiAgeyBocmVmOiAnaHR0cHM6Ly9naXRodWIuY29tL3plaXQvbmV4dC5qcycsIGxhYmVsOiAnR2l0SHViJyB9LFxuXS5tYXAobGluayA9PiAoe1xuICAuLi5saW5rLFxuICBrZXk6IGBuYXYtbGluay0ke2xpbmsuaHJlZn0tJHtsaW5rLmxhYmVsfWAsXG59KSlcblxuY29uc3QgTmF2ID0gKCkgPT4gKFxuICA8bmF2PlxuICAgIDx1bD5cbiAgICAgIDxsaT5cbiAgICAgICAgPExpbmsgaHJlZj1cIi9cIj5cbiAgICAgICAgICA8YT5Ib21lPC9hPlxuICAgICAgICA8L0xpbms+XG4gICAgICA8L2xpPlxuICAgICAge2xpbmtzLm1hcCgoeyBrZXksIGhyZWYsIGxhYmVsIH0pID0+IChcbiAgICAgICAgPGxpIGtleT17a2V5fT5cbiAgICAgICAgICA8YSBocmVmPXtocmVmfT57bGFiZWx9PC9hPlxuICAgICAgICA8L2xpPlxuICAgICAgKSl9XG4gICAgPC91bD5cblxuICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgIDpnbG9iYWwoYm9keSkge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsIEF2ZW5pciBOZXh0LCBBdmVuaXIsXG4gICAgICAgICAgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xuICAgICAgfVxuICAgICAgbmF2IHtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgfVxuICAgICAgdWwge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgICB9XG4gICAgICBuYXYgPiB1bCB7XG4gICAgICAgIHBhZGRpbmc6IDRweCAxNnB4O1xuICAgICAgfVxuICAgICAgbGkge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBwYWRkaW5nOiA2cHggOHB4O1xuICAgICAgfVxuICAgICAgYSB7XG4gICAgICAgIGNvbG9yOiAjMDY3ZGY3O1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvbmF2PlxuKVxuXG5leHBvcnQgZGVmYXVsdCBOYXZcbiJdfQ== */\n/*@ sourceURL=/Users/j.ruffle/GithubProjects/animations-with-hooks/components/nav.js */"));
+}));
 
-/* harmony default export */ __webpack_exports__["default"] = (Nav);
+const dropdownArea = () => ({
+  float: "left",
+  overflow: "hidden"
+});
+
+const DropdownArea = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(dropdownArea, "div");
+
+const dropdownButton = () => ({
+  border: "none",
+  outline: "none",
+  height: "30px",
+  padding: "0 0 0 4px",
+  ":hover": {
+    cursor: "pointer"
+  }
+});
+
+const DropdownButton = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(dropdownButton, "button", ["onClick"]);
+
+const dropdownList = ({
+  open
+}) => ({
+  display: open ? "flex" : "none",
+  flexDirection: "column",
+  position: "absolute",
+  backgroundColor: "white",
+  minWidth: "250px",
+  boxShadow: "rgba(0, 0, 0, 0.1) 0px 10px 8px 0px",
+  zIndex: 20,
+  padding: "6px"
+});
+
+const DropdownList = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(dropdownList, "div");
+
+const pageLink = () => ({
+  textDecoration: "none",
+  font: "12px/18px Verdana, serif",
+  padding: "4px",
+  color: "black",
+  ":hover": {
+    cursor: "pointer",
+    color: "#008f9c",
+    fontStyle: "bold"
+  }
+});
+
+const PageLink = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(pageLink, "a", ["onClick"]);
+
+const headingLink = () => ({
+  cursor: "pointer",
+  textDecoration: "none"
+});
+
+const HeadingLink = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(headingLink, "a", ["onClick"]);
+
+const Navigation = ({
+  animations
+}) => {
+  const {
+    0: dropdownOpen,
+    1: setDropdownOpen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  return __jsx(NavigationBar, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }, __jsx(HeadingLink, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, __jsx(_StyledText__WEBPACK_IMPORTED_MODULE_3__["HeadingMedium"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }, "Animation Library"))), __jsx(DropdownArea, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: undefined
+  }, __jsx(DropdownButton, {
+    onClick: e => setDropdownOpen(!dropdownOpen),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: undefined
+  }, __jsx(DropdownCaret, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: undefined
+  })), __jsx(DropdownList, {
+    open: dropdownOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: undefined
+  }, animations.map(item => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: `/${item.animationKey}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: undefined
+  }, __jsx(PageLink, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
+  }, item.navigationName))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Navigation);
+
+/***/ }),
+
+/***/ "./data/index.js":
+/*!***********************!*\
+  !*** ./data/index.js ***!
+  \***********************/
+/*! exports provided: animationData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animationData", function() { return animationData; });
+const animationData = [{
+  animationName: "Fade in on scroll",
+  animationDescription: "Using intersection observer",
+  animationKey: "fade-scroll-io",
+  navigationName: "Fade in | Intersection Observer",
+  key: "1"
+}, {
+  animationName: "Fade in on scroll",
+  animationDescription: "Using bounding client",
+  animationKey: "fade-scroll-bc",
+  navigationName: "Fade in | Bounding Client",
+  key: "2"
+}, {
+  animationName: "Grow/Shrink in on scroll",
+  animationDescription: "Using intersection observer",
+  animationKey: "size-scroll-io",
+  navigationName: "Grow/Shrink | Intersection Observer",
+  key: "3"
+}, {
+  animationName: "Grow/Shrink in on scroll",
+  animationDescription: "Using bounding client",
+  animationKey: "size-scroll-bc",
+  navigationName: "Grow/Shrink | Bounding Client",
+  key: "4"
+}, {
+  animationName: "Parallax Image",
+  animationDescription: "Parallax Imagery, shifting behaviour on scroll",
+  animationKey: "parallax-image",
+  navigationName: "Parallax Image",
+  key: "5"
+}, {
+  animationName: "Slide gallery",
+  animationDescription: "Overlapping slide behaviour using sticky",
+  animationKey: "slide-gallery",
+  navigationName: "Slide Gallery",
+  key: "6"
+}, {
+  animationName: "Sticky carousel",
+  animationDescription: "Carousel behaviour with vertical numbered pips",
+  animationKey: "sticky-vertical-carousel",
+  navigationName: "Sticky Carousel",
+  key: "7"
+}];
 
 /***/ }),
 
@@ -1874,166 +2224,95 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/nav */ "./components/nav.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var fela__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fela */ "fela");
+/* harmony import */ var fela__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fela__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data */ "./data/index.js");
+/* harmony import */ var _components_Homepage_homepageBlock_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Homepage/homepageBlock.js */ "./components/Homepage/homepageBlock.js");
+/* harmony import */ var _components_Homepage_blockContainer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Homepage/blockContainer */ "./components/Homepage/blockContainer.js");
+/* harmony import */ var _components_Homepage_headerContent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Homepage/headerContent */ "./components/Homepage/headerContent.js");
+/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/nav */ "./components/nav.js");
 var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/pages/index.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Home = () => __jsx("div", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, __jsx("title", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, "Home"), __jsx("link", {
-  rel: "icon",
-  href: "/favicon.ico",
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-})), __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}), __jsx("div", {
-  className: "jsx-243749409" + " " + "hero",
+
+
+
+
+
+
+const renderer = Object(fela__WEBPACK_IMPORTED_MODULE_1__["createRenderer"])();
+
+const Home = () => __jsx(react_fela__WEBPACK_IMPORTED_MODULE_2__["RendererProvider"], {
+  renderer: renderer,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 14
   },
   __self: undefined
-}, __jsx("h1", {
-  className: "jsx-243749409" + " " + "title",
+}, __jsx("div", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 15
   },
   __self: undefined
-}, "Welcome to Next.js!"), __jsx("p", {
-  className: "jsx-243749409" + " " + "description",
+}, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 16
   },
   __self: undefined
-}, "To get started, edit ", __jsx("code", {
-  className: "jsx-243749409",
+}, __jsx("title", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 17
   },
   __self: undefined
-}, "pages/index.js"), " and save to reload."), __jsx("div", {
-  className: "jsx-243749409" + " " + "row",
+}, "Home | Animation Library")), __jsx(_components_nav__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  animations: _data__WEBPACK_IMPORTED_MODULE_4__["animationData"],
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}), __jsx(_components_Homepage_headerContent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  heading: "Animation Library",
+  subHeading: "A library for animations built using React Hooks, Intersection Observer and more.",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 20
   },
   __self: undefined
-}, __jsx("a", {
-  href: "https://nextjs.org/docs",
-  className: "jsx-243749409" + " " + "card",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 21
-  },
-  __self: undefined
-}, __jsx("h3", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 22
-  },
-  __self: undefined
-}, "Documentation \u2192"), __jsx("p", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 23
-  },
-  __self: undefined
-}, "Learn more about Next.js in the documentation.")), __jsx("a", {
-  href: "https://nextjs.org/learn",
-  className: "jsx-243749409" + " " + "card",
+}), __jsx(_components_Homepage_blockContainer__WEBPACK_IMPORTED_MODULE_6__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 25
   },
   __self: undefined
-}, __jsx("h3", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 26
-  },
-  __self: undefined
-}, "Next.js Learn \u2192"), __jsx("p", {
-  className: "jsx-243749409",
+}, _data__WEBPACK_IMPORTED_MODULE_4__["animationData"].map((item, index) => __jsx(_components_Homepage_homepageBlock_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  index: index,
+  animationName: item.animationName,
+  animationDescription: item.animationDescription,
+  animationKey: item.animationKey,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 27
   },
   __self: undefined
-}, "Learn about Next.js by following an interactive tutorial!")), __jsx("a", {
-  href: "https://github.com/zeit/next.js/tree/master/examples",
-  className: "jsx-243749409" + " " + "card",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 29
-  },
-  __self: undefined
-}, __jsx("h3", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 33
-  },
-  __self: undefined
-}, "Examples \u2192"), __jsx("p", {
-  className: "jsx-243749409",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 34
-  },
-  __self: undefined
-}, "Find other example boilerplates on the Next.js GitHub.")))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "243749409",
-  __self: undefined
-}, ".hero.jsx-243749409{width:100%;color:#333;}.title.jsx-243749409{margin:0;width:100%;padding-top:80px;line-height:1.15;font-size:48px;}.title.jsx-243749409,.description.jsx-243749409{text-align:center;}.row.jsx-243749409{max-width:880px;margin:80px auto 40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:space-around;-webkit-justify-content:space-around;-ms-flex-pack:space-around;justify-content:space-around;}.card.jsx-243749409{padding:18px 18px 24px;width:220px;text-align:left;-webkit-text-decoration:none;text-decoration:none;color:#434343;border:1px solid #9b9b9b;}.card.jsx-243749409:hover{border-color:#067df7;}.card.jsx-243749409 h3.jsx-243749409{margin:0;color:#067df7;font-size:18px;}.card.jsx-243749409 p.jsx-243749409{margin:0;padding:12px 0 0;font-size:13px;color:#333;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qLnJ1ZmZsZS9HaXRodWJQcm9qZWN0cy9hbmltYXRpb25zLXdpdGgtaG9va3MvcGFnZXMvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBc0NnQixBQUdvQixBQUlGLEFBUVMsQUFHRixBQU9PLEFBUUYsQUFHWixBQUtBLFNBakNFLEFBNkJHLEFBS0csRUF0Q04sS0FlVyxFQUh4QixFQVBtQixDQXlCbkIsQ0E3QkEsQ0FxQmMsQUFZRyxHQUtBLFNBaEJDLEVBakJDLENBVUosQUFtQmYsR0FLYSxVQWhCVSxDQWlCdkIsRUFsQ2lCLGVBQ2pCLGdDQWlCZ0IsV0FSSyxHQVNNLHlCQUMzQix5Q0FUK0IsMkhBQy9CIiwiZmlsZSI6Ii9Vc2Vycy9qLnJ1ZmZsZS9HaXRodWJQcm9qZWN0cy9hbmltYXRpb25zLXdpdGgtaG9va3MvcGFnZXMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnXG5pbXBvcnQgTmF2IGZyb20gJy4uL2NvbXBvbmVudHMvbmF2J1xuXG5jb25zdCBIb21lID0gKCkgPT4gKFxuICA8ZGl2PlxuICAgIDxIZWFkPlxuICAgICAgPHRpdGxlPkhvbWU8L3RpdGxlPlxuICAgICAgPGxpbmsgcmVsPVwiaWNvblwiIGhyZWY9XCIvZmF2aWNvbi5pY29cIiAvPlxuICAgIDwvSGVhZD5cblxuICAgIDxOYXYgLz5cblxuICAgIDxkaXYgY2xhc3NOYW1lPVwiaGVyb1wiPlxuICAgICAgPGgxIGNsYXNzTmFtZT1cInRpdGxlXCI+V2VsY29tZSB0byBOZXh0LmpzITwvaDE+XG4gICAgICA8cCBjbGFzc05hbWU9XCJkZXNjcmlwdGlvblwiPlxuICAgICAgICBUbyBnZXQgc3RhcnRlZCwgZWRpdCA8Y29kZT5wYWdlcy9pbmRleC5qczwvY29kZT4gYW5kIHNhdmUgdG8gcmVsb2FkLlxuICAgICAgPC9wPlxuXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInJvd1wiPlxuICAgICAgICA8YSBocmVmPVwiaHR0cHM6Ly9uZXh0anMub3JnL2RvY3NcIiBjbGFzc05hbWU9XCJjYXJkXCI+XG4gICAgICAgICAgPGgzPkRvY3VtZW50YXRpb24gJnJhcnI7PC9oMz5cbiAgICAgICAgICA8cD5MZWFybiBtb3JlIGFib3V0IE5leHQuanMgaW4gdGhlIGRvY3VtZW50YXRpb24uPC9wPlxuICAgICAgICA8L2E+XG4gICAgICAgIDxhIGhyZWY9XCJodHRwczovL25leHRqcy5vcmcvbGVhcm5cIiBjbGFzc05hbWU9XCJjYXJkXCI+XG4gICAgICAgICAgPGgzPk5leHQuanMgTGVhcm4gJnJhcnI7PC9oMz5cbiAgICAgICAgICA8cD5MZWFybiBhYm91dCBOZXh0LmpzIGJ5IGZvbGxvd2luZyBhbiBpbnRlcmFjdGl2ZSB0dXRvcmlhbCE8L3A+XG4gICAgICAgIDwvYT5cbiAgICAgICAgPGFcbiAgICAgICAgICBocmVmPVwiaHR0cHM6Ly9naXRodWIuY29tL3plaXQvbmV4dC5qcy90cmVlL21hc3Rlci9leGFtcGxlc1wiXG4gICAgICAgICAgY2xhc3NOYW1lPVwiY2FyZFwiXG4gICAgICAgID5cbiAgICAgICAgICA8aDM+RXhhbXBsZXMgJnJhcnI7PC9oMz5cbiAgICAgICAgICA8cD5GaW5kIG90aGVyIGV4YW1wbGUgYm9pbGVycGxhdGVzIG9uIHRoZSBOZXh0LmpzIEdpdEh1Yi48L3A+XG4gICAgICAgIDwvYT5cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuXG4gICAgPHN0eWxlIGpzeD57YFxuICAgICAgLmhlcm8ge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgY29sb3I6ICMzMzM7XG4gICAgICB9XG4gICAgICAudGl0bGUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICBwYWRkaW5nLXRvcDogODBweDtcbiAgICAgICAgbGluZS1oZWlnaHQ6IDEuMTU7XG4gICAgICAgIGZvbnQtc2l6ZTogNDhweDtcbiAgICAgIH1cbiAgICAgIC50aXRsZSxcbiAgICAgIC5kZXNjcmlwdGlvbiB7XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgIH1cbiAgICAgIC5yb3cge1xuICAgICAgICBtYXgtd2lkdGg6IDg4MHB4O1xuICAgICAgICBtYXJnaW46IDgwcHggYXV0byA0MHB4O1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgICAgIH1cbiAgICAgIC5jYXJkIHtcbiAgICAgICAgcGFkZGluZzogMThweCAxOHB4IDI0cHg7XG4gICAgICAgIHdpZHRoOiAyMjBweDtcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICBjb2xvcjogIzQzNDM0MztcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgIzliOWI5YjtcbiAgICAgIH1cbiAgICAgIC5jYXJkOmhvdmVyIHtcbiAgICAgICAgYm9yZGVyLWNvbG9yOiAjMDY3ZGY3O1xuICAgICAgfVxuICAgICAgLmNhcmQgaDMge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGNvbG9yOiAjMDY3ZGY3O1xuICAgICAgICBmb250LXNpemU6IDE4cHg7XG4gICAgICB9XG4gICAgICAuY2FyZCBwIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBwYWRkaW5nOiAxMnB4IDAgMDtcbiAgICAgICAgZm9udC1zaXplOiAxM3B4O1xuICAgICAgICBjb2xvcjogIzMzMztcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvZGl2PlxuKVxuXG5leHBvcnQgZGVmYXVsdCBIb21lXG4iXX0= */\n/*@ sourceURL=/Users/j.ruffle/GithubProjects/animations-with-hooks/pages/index.js */"));
+})))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2100,6 +2379,17 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
+/***/ "fela":
+/*!***********************!*\
+  !*** external "fela" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("fela");
+
+/***/ }),
+
 /***/ "next/head":
 /*!****************************!*\
   !*** external "next/head" ***!
@@ -2144,6 +2434,17 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "react-fela":
+/*!*****************************!*\
+  !*** external "react-fela" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-fela");
+
+/***/ }),
+
 /***/ "react-is":
 /*!***************************!*\
   !*** external "react-is" ***!
@@ -2152,17 +2453,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
-
-/***/ }),
-
-/***/ "styled-jsx/style":
-/*!***********************************!*\
-  !*** external "styled-jsx/style" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("styled-jsx/style");
 
 /***/ }),
 

@@ -21,7 +21,35 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
+    "/fade-scroll-bc": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/fade-scroll-io": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/parallax-image": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/size-scroll-bc": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/size-scroll-io": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/slide-gallery": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/sticky-vertical-carousel": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
