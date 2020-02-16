@@ -1,41 +1,41 @@
-import React from "react";
-import { createComponent } from "react-fela";
+import React from 'react'
+import { createComponent } from 'react-fela'
 
 const slideContainer = () => ({
-  scrollSnapType: "y proximity",
-  position: "relative",
-  overflow: "scroll",
-  height: "100vh"
-});
+  scrollSnapType: 'y proximity',
+  position: 'relative',
+  overflow: 'scroll',
+  height: '100vh'
+})
 
-const SlideContainer = createComponent(slideContainer, "div");
+const SlideContainer = createComponent(slideContainer, 'div')
 
 const slideWrapper = ({ zIndex }) => ({
-  width: "100%",
-  scrollSnapAlign: "start",
-  position: "sticky",
+  width: '100%',
+  scrollSnapAlign: 'start',
+  position: 'sticky',
   top: 0,
-  height: "100vh",
-  overflow: "hidden",
+  height: '100vh',
+  overflow: 'hidden',
   zIndex
-});
+})
 
-const SlideWrapper = createComponent(slideWrapper, "div");
+const SlideWrapper = createComponent(slideWrapper, 'div')
 
 const slideImage = () => ({
-  width: "100%",
-  objectFit: "cover",
-  height: "100vh"
-});
-const SlideImage = createComponent(slideImage, "img", ["src"]);
+  width: '100%',
+  objectFit: 'cover',
+  height: '100vh'
+})
+const SlideImage = createComponent(slideImage, 'img', ['src'])
 
 const Slide = ({ zIndex, imageSrc }) => {
   return (
     <SlideWrapper zIndex={zIndex}>
       <SlideImage src={imageSrc} />
     </SlideWrapper>
-  );
-};
+  )
+}
 
 const StickySlides = ({ images }) => (
   <SlideContainer>
@@ -43,6 +43,6 @@ const StickySlides = ({ images }) => (
       <Slide zIndex={(index + 1) * 2} imageSrc={item} />
     ))}
   </SlideContainer>
-);
+)
 
-export default StickySlides;
+export default StickySlides

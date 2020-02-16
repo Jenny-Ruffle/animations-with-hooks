@@ -1,9 +1,9 @@
-import React from "react";
-import Template from "../mainTemplate.js";
-import FadeBC from "../../components/FadeBC";
-import images from "../../data/images";
-import { PaddingContainer } from "../../components/SpacingComponents";
-import { HeadingMedium } from "../../components/StyledText";
+import React from 'react'
+import Template from '../mainTemplate.js'
+import FadeBC from '../../components/FadeBC'
+import images from '../../data/images'
+import { PaddingContainer } from '../../components/SpacingComponents'
+import { HeadingMedium } from '../../components/StyledText'
 
 const FadeIn2 = () => (
   <Template
@@ -21,6 +21,6 @@ const FadeIn2 = () => (
     <FadeBC fadeIn={true} src={images[2]} />
     <FadeBC fadeIn={true} src={images[3]} />
   </Template>
-);
+)
 
-export default FadeIn2;
+export default FadeIn2

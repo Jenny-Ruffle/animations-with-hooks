@@ -1,0 +1,15 @@
+{
+  "tabWidth": 2,
+  "printWidth": 160,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "semi": false,
+  "overrides": [
+    {
+      "files": ["*.json", ".babelrc", ".lintstagedrc", ".prettierrc"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

@@ -1,54 +1,51 @@
-import React, { useRef } from "react";
-import { createComponent } from "react-fela";
-import getScreenHeight from "../../utils/getScreenHeight";
-import getBoundingClient from "../../utils/getBoundingClient";
+import React, { useRef } from 'react'
+import { createComponent } from 'react-fela'
+import getScreenHeight from '../../utils/getScreenHeight'
+import getBoundingClient from '../../utils/getBoundingClient'
 
 const container = () => ({
-  display: "flex",
-  margin: "10px 100px",
-  justifyContent: "center"
-});
+  display: 'flex',
+  margin: '10px 100px',
+  justifyContent: 'center'
+})
 
-const Container = createComponent(container, "div");
+const Container = createComponent(container, 'div')
 
-const imageContainer = ({ width = "100%" }) => ({
+const imageContainer = ({ width = '100%' }) => ({
   width
-});
+})
 
-const ImageContainer = createComponent(imageContainer, "div", ["innerRef"]);
+const ImageContainer = createComponent(imageContainer, 'div', ['innerRef'])
 
 const styledImage = () => ({
-  width: "100%"
-});
+  width: '100%'
+})
 
-const StyledImage = createComponent(styledImage, "img", ["src"]);
+const StyledImage = createComponent(styledImage, 'img', ['src'])
 
 const getShrinkingWidth = (boundingClient, screenHeight) => {
-  const onScreenRatio =
-    (boundingClient.top + boundingClient.height) / screenHeight;
-  const percentageChange = onScreenRatio < 1 ? onScreenRatio * 30 : 30;
-  return 70 + percentageChange;
-};
+  const onScreenRatio = (boundingClient.top + boundingClient.height) / screenHeight
+  const percentageChange = onScreenRatio < 1 ? onScreenRatio * 30 : 30
+  return 70 + percentageChange
+}
 
 const getGrowingWidth = (boundingClient, screenHeight) => {
-  const onScreenRatio = boundingClient.top / screenHeight;
-  const percentageChange = onScreenRatio < 1 ? onScreenRatio * 30 : 30;
-  return 100 - percentageChange;
-};
+  const onScreenRatio = boundingClient.top / screenHeight
+  const percentageChange = onScreenRatio < 1 ? onScreenRatio * 30 : 30
+  return 100 - percentageChange
+}
 
 const ImageWrapper = ({ children, grow }) => {
-  const ref = useRef();
-  const boundingClient = getBoundingClient(ref);
-  const screenHeight = getScreenHeight().height;
-  const width = grow
-    ? getGrowingWidth(boundingClient, screenHeight)
-    : getShrinkingWidth(boundingClient, screenHeight);
+  const ref = useRef()
+  const boundingClient = getBoundingClient(ref)
+  const screenHeight = getScreenHeight().height
+  const width = grow ? getGrowingWidth(boundingClient, screenHeight) : getShrinkingWidth(boundingClient, screenHeight)
   return (
     <ImageContainer width={`${width}%`} innerRef={ref}>
       {children}
     </ImageContainer>
-  );
-};
+  )
+}
 
 const ResizeBC = ({ grow, src }) => {
   return (
@@ -57,7 +54,7 @@ const ResizeBC = ({ grow, src }) => {
         <StyledImage src={src} />
       </ImageWrapper>
     </Container>
-  );
-};
+  )
+}
 
-export default ResizeBC;
+export default ResizeBC
