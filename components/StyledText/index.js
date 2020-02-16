@@ -29,3 +29,15 @@ const paragraph = () => ({
 })
 
 export const Paragraph = createComponent(paragraph, 'p')
+
+const codeSnippet = () => ({
+  font: '12px/16px Courier, serif',
+  margin: '10px',
+  padding: '10px',
+  fontColor: 'black',
+  backgroundColor: '#f5f5f5',
+  border: '1px dotted lightgrey',
+  borderRadius: '6px'
+})
+
+export const CodeSnippet = createComponent(codeSnippet, 'p')
