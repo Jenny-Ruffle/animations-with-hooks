@@ -3,8 +3,9 @@ import { createComponent } from "react-fela";
 import { HeadingLarge, Paragraph } from "../StyledText/index";
 
 const headingContainer = () => ({
-  width: "100%",
-  textAlign: "center"
+  width: "80%",
+  textAlign: "center",
+  padding: "0 10%"
 });
 
 const HeadingContainer = createComponent(headingContainer, "div");
