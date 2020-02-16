@@ -1,6 +1,6 @@
 import React from "react";
 import { createRenderer } from "fela";
-import { RendererProvider } from "react-fela";
+import FelaProvider from "../utils/felaProvider";
 import Head from "next/head";
 import { animationData } from "../data";
 import HeaderContent from "../components/Homepage/headerContent";
@@ -9,7 +9,7 @@ import Navigation from "../components/nav";
 const renderer = createRenderer();
 
 const Template = ({ children, title, description }) => (
-  <RendererProvider renderer={renderer}>
+  <FelaProvider renderer={renderer}>
     <div>
       <Head>
         <title>{title} | Animation Library</title>
@@ -18,7 +18,7 @@ const Template = ({ children, title, description }) => (
       <HeaderContent heading={title} subHeading={description} />
       {children}
     </div>
-  </RendererProvider>
+  </FelaProvider>
 );
 
 export default Template;

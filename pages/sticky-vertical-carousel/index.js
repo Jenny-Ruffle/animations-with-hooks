@@ -1,8 +1,12 @@
 import React from "react";
 import Template from "../mainTemplate.js";
+import images from "../../data/images";
+import StickyCarousel from "../../components/StickyVerticalCarousel";
 
-const StickyCarousel = () => (
-  <Template title="Sticky Carousel" description="..."></Template>
+const StickyCarouselPage = () => (
+  <Template title="Sticky Carousel" description="">
+    <StickyCarousel images={images} />
+  </Template>
 );
 
-export default StickyCarousel;
+export default StickyCarouselPage;
