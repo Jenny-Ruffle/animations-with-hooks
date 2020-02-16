@@ -1,27 +1,27 @@
 export const animationData = [
   {
-    animationName: "Fade in on scroll",
+    animationName: "Fade on scroll",
     animationDescription: "Using intersection observer",
     animationKey: "fade-scroll-io",
-    navigationName: "Fade in | Intersection Observer",
+    navigationName: "Fade | Intersection Observer",
     key: "1"
   },
   {
-    animationName: "Fade in on scroll",
+    animationName: "Fade on scroll",
     animationDescription: "Using bounding client",
     animationKey: "fade-scroll-bc",
-    navigationName: "Fade in | Bounding Client",
+    navigationName: "Fade | Bounding Client",
     key: "2"
   },
   {
-    animationName: "Grow/Shrink in on scroll",
+    animationName: "Grow/Shrink on scroll",
     animationDescription: "Using intersection observer",
     animationKey: "size-scroll-io",
     navigationName: "Grow/Shrink | Intersection Observer",
     key: "3"
   },
   {
-    animationName: "Grow/Shrink in on scroll",
+    animationName: "Grow/Shrink on scroll",
     animationDescription: "Using bounding client",
     animationKey: "size-scroll-bc",
     navigationName: "Grow/Shrink | Bounding Client",
