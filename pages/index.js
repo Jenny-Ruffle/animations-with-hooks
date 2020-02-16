@@ -26,6 +26,7 @@ const Home = () => (
         {animationData.map((item, index) => (
           <HomepageBlock
             index={index}
+            key={index}
             animationName={item.animationName}
             animationDescription={item.animationDescription}
             animationKey={item.animationKey}

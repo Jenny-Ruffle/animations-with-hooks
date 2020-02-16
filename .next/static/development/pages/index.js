@@ -395,7 +395,7 @@ var Navigation = function Navigation(_ref2) {
       lineNumber: 86
     },
     __self: this
-  }, animations.map(function (item) {
+  }, animations.map(function (item, index) {
     return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: "/".concat(item.animationKey),
       __source: {
@@ -15379,6 +15379,7 @@ var Home = function Home() {
   }, _data__WEBPACK_IMPORTED_MODULE_4__["animationData"].map(function (item, index) {
     return __jsx(_components_Homepage_homepageBlock_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
       index: index,
+      key: index,
       animationName: item.animationName,
       animationDescription: item.animationDescription,
       animationKey: item.animationKey,
@@ -15395,7 +15396,7 @@ var Home = function Home() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fj.ruffle%2FGithubProjects%2Fanimations-with-hooks%2Fpages%2Findex.js ***!
   \************************************************************************************************************************************************/
@@ -15418,5 +15419,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

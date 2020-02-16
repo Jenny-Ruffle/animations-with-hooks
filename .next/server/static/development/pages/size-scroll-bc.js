@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -146,6 +146,164 @@ const HeaderContent = ({
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HeaderContent);
+
+/***/ }),
+
+/***/ "./components/ResizeBC/index.js":
+/*!**************************************!*\
+  !*** ./components/ResizeBC/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_getScreenHeight__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/getScreenHeight */ "./utils/getScreenHeight.js");
+/* harmony import */ var _utils_getBoundingClient__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/getBoundingClient */ "./utils/getBoundingClient.js");
+var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/components/ResizeBC/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const container = () => ({
+  display: "flex",
+  margin: "10px 100px",
+  justifyContent: "center"
+});
+
+const Container = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(container, "div");
+
+const imageContainer = ({
+  width = "100%"
+}) => ({
+  width
+});
+
+const ImageContainer = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(imageContainer, "div", ["innerRef"]);
+
+const styledImage = () => ({
+  width: "100%"
+});
+
+const StyledImage = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(styledImage, "img", ["src"]);
+
+const getShrinkingWidth = (boundingClient, screenHeight) => {
+  const onScreenRatio = (boundingClient.top + boundingClient.height) / screenHeight;
+  const percentageChange = onScreenRatio < 1 ? onScreenRatio * 30 : 30;
+  return 70 + percentageChange;
+};
+
+const getGrowingWidth = (boundingClient, screenHeight) => {
+  const onScreenRatio = boundingClient.top / screenHeight;
+  const percentageChange = onScreenRatio < 1 ? onScreenRatio * 30 : 30;
+  return 100 - percentageChange;
+};
+
+const ImageWrapper = ({
+  children,
+  grow
+}) => {
+  const ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  const boundingClient = Object(_utils_getBoundingClient__WEBPACK_IMPORTED_MODULE_3__["default"])(ref);
+  const screenHeight = Object(_utils_getScreenHeight__WEBPACK_IMPORTED_MODULE_2__["default"])().height;
+  const width = grow ? getGrowingWidth(boundingClient, screenHeight) : getShrinkingWidth(boundingClient, screenHeight);
+  return __jsx(ImageContainer, {
+    width: `${width}%`,
+    innerRef: ref,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, children);
+};
+
+const ResizeBC = ({
+  grow,
+  src
+}) => {
+  return __jsx(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx(ImageWrapper, {
+    grow: grow,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, __jsx(StyledImage, {
+    src: src,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ResizeBC);
+
+/***/ }),
+
+/***/ "./components/SpacingComponents/index.js":
+/*!***********************************************!*\
+  !*** ./components/SpacingComponents/index.js ***!
+  \***********************************************/
+/*! exports provided: PaddingContainer, LatinText */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaddingContainer", function() { return PaddingContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LatinText", function() { return LatinText; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-fela */ "react-fela");
+/* harmony import */ var react_fela__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_fela__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _StyledText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../StyledText */ "./components/StyledText/index.js");
+var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/components/SpacingComponents/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const container = ({
+  height = "300px"
+}) => ({
+  height,
+  margin: "0 10%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  textAlign: "center",
+  width: "80%"
+});
+
+const PaddingContainer = Object(react_fela__WEBPACK_IMPORTED_MODULE_1__["createComponent"])(container, "div");
+const LatinText = () => __jsx(PaddingContainer, {
+  height: "500px",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 18
+  },
+  __self: undefined
+}, __jsx(_StyledText__WEBPACK_IMPORTED_MODULE_2__["Paragraph"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ante urna, dapibus eget mauris eu, tincidunt varius lacus. Etiam in tempus sem. Etiam eu commodo lacus. Sed quam orci, consectetur a enim ac, auctor rutrum libero. In egestas mi sed fermentum consectetur. In cursus molestie tortor. Quisque convallis ultrices leo, cursus bibendum massa pellentesque sit amet. Nullam aliquet, orci sed dapibus tempor, libero quam tincidunt elit, tempor porttitor tellus ante id leo. Suspendisse pharetra justo nec nisi ultricies, in luctus metus venenatis. Aliquam erat volutpat. Mauris non nulla mauris. Suspendisse potenti. Phasellus ut sollicitudin mi. Fusce vestibulum laoreet gravida. Integer mi diam, dictum eu pellentesque sit amet, malesuada id augue. Integer consectetur risus augue. Proin ultrices tellus nibh. Donec facilisis nulla magna, et rhoncus sapien suscipit ut. Nam at mauris id mi gravida tristique. Vivamus ultrices dolor eu justo lacinia, placerat tempor est semper. Mauris varius malesuada ex, eget egestas mi tincidunt sed. Suspendisse potenti. In nec ex sit amet magna mattis malesuada vitae eu purus. Fusce vitae neque quis nibh fringilla sodales sed vel sem. Nulla velit est, tincidunt ultrices lacinia id, sollicitudin sed erat. Nulla libero libero, blandit eget metus at, tempus vulputate ligula. Donec sit amet orci imperdiet, accumsan tellus ac, aliquet urna. Mauris sapien mi, malesuada fringilla ex sed, eleifend molestie ipsum. Proin suscipit libero id elit suscipit, at cursus lorem congue. Etiam egestas lorem sapien, vitae accumsan neque convallis vel. Donec faucibus metus ullamcorper massa elementum tristique. Curabitur dui nunc, hendrerit ut dignissim nec, euismod vel nisl."));
 
 /***/ }),
 
@@ -360,7 +518,7 @@ const Navigation = ({
       lineNumber: 86
     },
     __self: undefined
-  }, animations.map(item => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, animations.map((item, index) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: `/${item.animationKey}`,
     __source: {
       fileName: _jsxFileName,
@@ -377,6 +535,76 @@ const Navigation = ({
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navigation);
+
+/***/ }),
+
+/***/ "./data/images/CH.jpg":
+/*!****************************!*\
+  !*** ./data/images/CH.jpg ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/CH-1cf3312e376ec49a82594656a6d20c61.jpg";
+
+/***/ }),
+
+/***/ "./data/images/KL.jpg":
+/*!****************************!*\
+  !*** ./data/images/KL.jpg ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/KL-27b8aa8b6d1bd12e97588924dce092ba.jpg";
+
+/***/ }),
+
+/***/ "./data/images/index.js":
+/*!******************************!*\
+  !*** ./data/images/index.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _KL_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./KL.jpg */ "./data/images/KL.jpg");
+/* harmony import */ var _KL_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_KL_jpg__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CH_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CH.jpg */ "./data/images/CH.jpg");
+/* harmony import */ var _CH_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_CH_jpg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _monkeys_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./monkeys.jpg */ "./data/images/monkeys.jpg");
+/* harmony import */ var _monkeys_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_monkeys_jpg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _perhentian_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./perhentian.jpg */ "./data/images/perhentian.jpg");
+/* harmony import */ var _perhentian_jpg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_perhentian_jpg__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const images = [_KL_jpg__WEBPACK_IMPORTED_MODULE_0___default.a, _CH_jpg__WEBPACK_IMPORTED_MODULE_1___default.a, _monkeys_jpg__WEBPACK_IMPORTED_MODULE_2___default.a, _perhentian_jpg__WEBPACK_IMPORTED_MODULE_3___default.a];
+/* harmony default export */ __webpack_exports__["default"] = (images);
+
+/***/ }),
+
+/***/ "./data/images/monkeys.jpg":
+/*!*********************************!*\
+  !*** ./data/images/monkeys.jpg ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/monkeys-910328131f301de86fbfbd346265270c.jpg";
+
+/***/ }),
+
+/***/ "./data/images/perhentian.jpg":
+/*!************************************!*\
+  !*** ./data/images/perhentian.jpg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/perhentian-517796727c97f49e02c2996fd20ad0dd.jpg";
 
 /***/ }),
 
@@ -2200,8 +2428,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mainTemplate_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mainTemplate.js */ "./pages/mainTemplate.js");
+/* harmony import */ var _data_images__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/images */ "./data/images/index.js");
+/* harmony import */ var _components_ResizeBC__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ResizeBC */ "./components/ResizeBC/index.js");
+/* harmony import */ var _components_StyledText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/StyledText */ "./components/StyledText/index.js");
+/* harmony import */ var _components_SpacingComponents__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/SpacingComponents */ "./components/SpacingComponents/index.js");
 var _jsxFileName = "/Users/j.ruffle/GithubProjects/animations-with-hooks/pages/size-scroll-bc/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
 
 
 
@@ -2210,16 +2446,160 @@ const Resize2 = () => __jsx(_mainTemplate_js__WEBPACK_IMPORTED_MODULE_1__["defau
   description: "Resize component with bounding client...",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 5
+    lineNumber: 9
   },
   __self: undefined
-});
+}, __jsx(_components_SpacingComponents__WEBPACK_IMPORTED_MODULE_5__["PaddingContainer"], {
+  height: "400px",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  },
+  __self: undefined
+}, __jsx(_components_StyledText__WEBPACK_IMPORTED_MODULE_4__["HeadingLarge"], {
+  color: "#ff9a17",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 14
+  },
+  __self: undefined
+}, "Grow in")), __jsx(_components_ResizeBC__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  grow: true,
+  src: _data_images__WEBPACK_IMPORTED_MODULE_2__["default"][0],
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}), __jsx(_components_ResizeBC__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  grow: true,
+  src: _data_images__WEBPACK_IMPORTED_MODULE_2__["default"][1],
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}), __jsx(_components_SpacingComponents__WEBPACK_IMPORTED_MODULE_5__["PaddingContainer"], {
+  height: "200px",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 18
+  },
+  __self: undefined
+}, __jsx(_components_StyledText__WEBPACK_IMPORTED_MODULE_4__["HeadingLarge"], {
+  color: "#ff9a17",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}, "Shrink")), __jsx(_components_ResizeBC__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  grow: false,
+  src: _data_images__WEBPACK_IMPORTED_MODULE_2__["default"][2],
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 21
+  },
+  __self: undefined
+}), __jsx(_components_ResizeBC__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  grow: false,
+  src: _data_images__WEBPACK_IMPORTED_MODULE_2__["default"][3],
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 22
+  },
+  __self: undefined
+}), __jsx(_components_SpacingComponents__WEBPACK_IMPORTED_MODULE_5__["PaddingContainer"], {
+  height: "500px",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}));
 
 /* harmony default export */ __webpack_exports__["default"] = (Resize2);
 
 /***/ }),
 
-/***/ 8:
+/***/ "./utils/getBoundingClient.js":
+/*!************************************!*\
+  !*** ./utils/getBoundingClient.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/fp/throttle */ "lodash/fp/throttle");
+/* harmony import */ var lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ __webpack_exports__["default"] = (ref => {
+  const {
+    0: boundingClient,
+    1: setBoundingClient
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const handleScroll = lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1___default()(100, () => {
+    const boundingClientUpdate = ref.current.getBoundingClientRect();
+    setBoundingClient(boundingClientUpdate);
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+  return boundingClient;
+});
+
+/***/ }),
+
+/***/ "./utils/getScreenHeight.js":
+/*!**********************************!*\
+  !*** ./utils/getScreenHeight.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/fp/throttle */ "lodash/fp/throttle");
+/* harmony import */ var lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function getHeight() {
+  return {
+    height: window.innerHeight
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (() => {
+  const {
+    0: height,
+    1: setHeight
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const handleResize = lodash_fp_throttle__WEBPACK_IMPORTED_MODULE_1___default()(250, () => {
+    setHeight(getHeight());
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    window.addEventListener("resize", handleResize);
+    setHeight(getHeight());
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  return height;
+});
+
+/***/ }),
+
+/***/ 6:
 /*!*********************************************!*\
   !*** multi ./pages/size-scroll-bc/index.js ***!
   \*********************************************/
@@ -2294,6 +2674,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("fela");
+
+/***/ }),
+
+/***/ "lodash/fp/throttle":
+/*!*************************************!*\
+  !*** external "lodash/fp/throttle" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash/fp/throttle");
 
 /***/ }),
 

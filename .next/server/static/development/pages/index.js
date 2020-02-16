@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -468,7 +468,7 @@ const Navigation = ({
       lineNumber: 86
     },
     __self: undefined
-  }, animations.map(item => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, animations.map((item, index) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: `/${item.animationKey}`,
     __source: {
       fileName: _jsxFileName,
@@ -2298,6 +2298,7 @@ const Home = () => __jsx(react_fela__WEBPACK_IMPORTED_MODULE_2__["RendererProvid
   __self: undefined
 }, _data__WEBPACK_IMPORTED_MODULE_4__["animationData"].map((item, index) => __jsx(_components_Homepage_homepageBlock_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
   index: index,
+  key: index,
   animationName: item.animationName,
   animationDescription: item.animationDescription,
   animationKey: item.animationKey,
@@ -2312,7 +2313,7 @@ const Home = () => __jsx(react_fela__WEBPACK_IMPORTED_MODULE_2__["RendererProvid
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
