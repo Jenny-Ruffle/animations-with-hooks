@@ -1,2 +1,3 @@
 # animations-library
-Different animations using react hooks
+
+A library for animations, built using React hooks, Intersection Observer and Bounding Client Rect etc.

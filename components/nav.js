@@ -84,7 +84,7 @@ const Navigation = ({ animations }) => {
           <DropdownCaret />
         </DropdownButton>
         <DropdownList open={dropdownOpen}>
-          {animations.map(item => (
+          {animations.map((item, index) => (
             <Link href={`/${item.animationKey}`}>
               <PageLink>{item.navigationName}</PageLink>
             </Link>
