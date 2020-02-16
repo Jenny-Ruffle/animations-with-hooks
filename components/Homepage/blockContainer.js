@@ -1,12 +1,12 @@
-import { createComponent } from "react-fela";
+import { createComponent } from 'react-fela'
 
 const blockContainer = () => ({
-  width: "100%",
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center"
-});
+  width: '100%',
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center'
+})
 
-const BlockContainer = createComponent(blockContainer, "div");
+const BlockContainer = createComponent(blockContainer, 'div')
 
-export default BlockContainer;
+export default BlockContainer

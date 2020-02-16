@@ -1,14 +1,14 @@
-import React from "react";
-import { createComponent } from "react-fela";
-import { HeadingLarge, Paragraph } from "../StyledText/index";
+import React from 'react'
+import { createComponent } from 'react-fela'
+import { HeadingLarge, Paragraph } from '../StyledText/index'
 
 const headingContainer = () => ({
-  width: "80%",
-  textAlign: "center",
-  padding: "0 10%"
-});
+  width: '80%',
+  textAlign: 'center',
+  padding: '0 10%'
+})
 
-const HeadingContainer = createComponent(headingContainer, "div");
+const HeadingContainer = createComponent(headingContainer, 'div')
 
 const HeaderContent = ({ heading, subHeading }) => {
   return (
@@ -16,6 +16,6 @@ const HeaderContent = ({ heading, subHeading }) => {
       <HeadingLarge>{heading}</HeadingLarge>
       <Paragraph>{subHeading}</Paragraph>
     </HeadingContainer>
-  );
-};
-export default HeaderContent;
+  )
+}
+export default HeaderContent

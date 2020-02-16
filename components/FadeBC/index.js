@@ -1,55 +1,52 @@
-import React, { useRef } from "react";
-import { createComponent } from "react-fela";
-import getScreenHeight from "../../utils/getScreenHeight";
-import getBoundingClient from "../../utils/getBoundingClient";
+import React, { useRef } from 'react'
+import { createComponent } from 'react-fela'
+import getScreenHeight from '../../utils/getScreenHeight'
+import getBoundingClient from '../../utils/getBoundingClient'
 
 const container = () => ({
-  display: "flex",
-  margin: "10px 100px",
-  justifyContent: "center"
-});
+  display: 'flex',
+  margin: '10px 100px',
+  justifyContent: 'center'
+})
 
-const Container = createComponent(container, "div");
+const Container = createComponent(container, 'div')
 
-const imageContainer = ({ opacity = "1" }) => ({
+const imageContainer = ({ opacity = '1' }) => ({
   opacity,
-  width: "100%"
-});
+  width: '100%'
+})
 
-const ImageContainer = createComponent(imageContainer, "div", ["innerRef"]);
+const ImageContainer = createComponent(imageContainer, 'div', ['innerRef'])
 
 const styledImage = () => ({
-  width: "100%"
-});
+  width: '100%'
+})
 
-const StyledImage = createComponent(styledImage, "img", ["src"]);
+const StyledImage = createComponent(styledImage, 'img', ['src'])
 
 const getFadeOutOpacity = (boundingClient, screenHeight) => {
-  const onScreenRatio =
-    (boundingClient.top + boundingClient.height) / screenHeight;
-  const percentageChange = onScreenRatio < 1 ? onScreenRatio : 1;
-  return percentageChange;
-};
+  const onScreenRatio = (boundingClient.top + boundingClient.height) / screenHeight
+  const percentageChange = onScreenRatio < 1 ? onScreenRatio : 1
+  return percentageChange
+}
 
 const getFadeInOpacity = (boundingClient, screenHeight) => {
-  const onScreenRatio = boundingClient.top / screenHeight;
-  const percentageChange = onScreenRatio < 1 ? onScreenRatio : 1;
-  return 1 - percentageChange;
-};
+  const onScreenRatio = boundingClient.top / screenHeight
+  const percentageChange = onScreenRatio < 1 ? onScreenRatio : 1
+  return 1 - percentageChange
+}
 
 const ImageWrapper = ({ children, fadeIn }) => {
-  const ref = useRef();
-  const boundingClient = getBoundingClient(ref);
-  const screenHeight = getScreenHeight().height;
-  const opacity = fadeIn
-    ? getFadeInOpacity(boundingClient, screenHeight)
-    : getFadeOutOpacity(boundingClient, screenHeight);
+  const ref = useRef()
+  const boundingClient = getBoundingClient(ref)
+  const screenHeight = getScreenHeight().height
+  const opacity = fadeIn ? getFadeInOpacity(boundingClient, screenHeight) : getFadeOutOpacity(boundingClient, screenHeight)
   return (
     <ImageContainer opacity={opacity} innerRef={ref}>
       {children}
     </ImageContainer>
-  );
-};
+  )
+}
 
 const FadeBC = ({ fadeIn, src }) => {
   return (
@@ -58,7 +55,7 @@ const FadeBC = ({ fadeIn, src }) => {
         <StyledImage src={src} />
       </ImageWrapper>
     </Container>
-  );
-};
+  )
+}
 
-export default FadeBC;
+export default FadeBC

@@ -1,11 +1,11 @@
-import React from "react";
-import { createRenderer } from "fela";
-import Head from "next/head";
-import FelaProvider from "../utils/felaProvider";
-import { animationData } from "../data";
-import HomepageBlock from "../components/Homepage/homepageBlock.js";
-import BlockContainer from "../components/Homepage/blockContainer";
-import Template from "./mainTemplate.js";
+import React from 'react'
+import { createRenderer } from 'fela'
+import Head from 'next/head'
+import FelaProvider from '../utils/felaProvider'
+import { animationData } from '../data'
+import HomepageBlock from '../components/Homepage/homepageBlock.js'
+import BlockContainer from '../components/Homepage/blockContainer'
+import Template from './mainTemplate.js'
 
 const Home = () => (
   <Template
@@ -25,6 +25,6 @@ const Home = () => (
       ))}
     </BlockContainer>
   </Template>
-);
+)
 
-export default Home;
+export default Home
