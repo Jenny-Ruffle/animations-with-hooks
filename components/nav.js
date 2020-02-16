@@ -65,7 +65,8 @@ const PageLink = createComponent(pageLink, "a", ["onClick"]);
 
 const headingLink = () => ({
   cursor: "pointer",
-  textDecoration: "none"
+  textDecoration: "none",
+  paddingTop: "5px"
 });
 
 const HeadingLink = createComponent(headingLink, "a", ["onClick"]);
