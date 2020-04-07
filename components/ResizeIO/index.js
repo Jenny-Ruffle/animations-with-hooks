@@ -11,7 +11,7 @@ const resizeText = () => ({
 const ResizeText = createComponent(resizeText, 'div')
 
 const resizeImage = ({intersectionRatio}) => ({
-  width: `${intersectionRatio*10 + 30}%`
+  width: `${intersectionRatio*5 + 35}%`
 })
 
 const ResizeImage = createComponent(resizeImage, 'img', ['src'])
