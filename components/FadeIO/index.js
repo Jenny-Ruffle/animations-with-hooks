@@ -1,6 +1,6 @@
 import React, {useRef, useEffect} from 'react'
 import { createComponent } from 'react-fela'
-import { useIntersectionObserver } from './useIntersectionObserver'
+import { useIntersectionObserver } from '../../utils/useIntersectionObserver'
 import { HeadingLarge, HeadingMedium } from '../StyledText'
 
 const fadeText = () => ({
@@ -17,7 +17,6 @@ const fadeImage = () => ({
 const FadeImage = createComponent(fadeImage, 'img', ['src'])
 
 const fadeContainer = ({intersectionRatio}) => ({
-  transition: 'opacity 0.5s',
   opacity: intersectionRatio,
   display: 'flex',
   justifyContent: 'space-evenly',
@@ -42,11 +41,6 @@ const FadeComponent = ({ src, id, country, city }) => {
   const [intersectionRatio, entry] = useIntersectionObserver(elementRef, {
     threshold: 0
   });
-
-  // console.log our state everytime its updated to see if it works.
-  useEffect(() => {
-    console.log(intersectionRatio, entry);
-  }, [intersectionRatio]);
 
   if (id % 2 === 0) {
     return (

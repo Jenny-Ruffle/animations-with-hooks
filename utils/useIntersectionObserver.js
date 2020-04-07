@@ -2,6 +2,8 @@ import {
     useState,
     useEffect
 } from 'react'
+import throttle from 'lodash/fp/throttle'
+
 
 export const useIntersectionObserver = (ref, {
     threshold,
@@ -13,13 +15,11 @@ export const useIntersectionObserver = (ref, {
         entry: undefined,
     })
 
-
-
     useEffect(() => {
         const observer = new IntersectionObserver(
-            (entries, observerInstance) => {
+            throttle(300, (entries, observerInstance) => {
                 // checks to see if the element is intersecting
-                if (entries[0].intersectionRatio > 0 && entries[0].intersectionRatio != 1) {
+                if (entries[0].intersectionRatio > 0) {
                     // if it is update the state, we set triggered as to not re-observe the element
                     setState({
                         intersectionRatio: entries[0].intersectionRatio,
@@ -30,7 +30,7 @@ export const useIntersectionObserver = (ref, {
                     observerInstance.unobserve(ref.current)
                 }
                 return
-            }, {
+            }), {
                 threshold: threshold || 0,
                 root: root || null,
                 rootMargin: rootMargin || "0%",
