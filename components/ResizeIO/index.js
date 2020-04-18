@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react'
+import React, { useRef, useEffect } from 'react'
 import { createComponent } from 'react-fela'
 import { useIntersectionObserver } from '../../utils/useIntersectionObserver'
 import { HeadingLarge, HeadingMedium } from '../StyledText'
@@ -10,20 +10,27 @@ const resizeText = () => ({
 
 const ResizeText = createComponent(resizeText, 'div')
 
-const resizeImage = ({intersectionRatio}) => ({
-  width: `${intersectionRatio*5 + 35}%`
+const image = () => ({
+  width: '100%',
 })
 
-const ResizeImage = createComponent(resizeImage, 'img', ['src'])
+const Image = createComponent(image, 'img', ['src'])
 
-const resizeContainer = () => ({
+const imageContainer = ({ intersectionRatio = 0 }) => ({
+  width: `${intersectionRatio * 2 + 38}%`,
+})
+
+const ImageContainer = createComponent(imageContainer, 'div')
+
+const container = () => ({
   display: 'flex',
   justifyContent: 'space-evenly',
   width: '100%',
+  height: '340px',
   margin: '45px 0',
 })
 
-const ResizeContainer = createComponent(resizeContainer, 'div', ['id', 'innerRef'])
+const Container = createComponent(container, 'div', ['id', 'innerRef'])
 
 const Text = ({ country, city }) => {
   return (
@@ -33,25 +40,29 @@ const Text = ({ country, city }) => {
   )
 }
 
-const Image = ({intersectionRatio, src }) => <ResizeImage intersectionRatio={intersectionRatio} src={src} alt="Image alt" />
+const ResizingImage = ({ intersectionRatio, src }) => (
+  <ImageContainer intersectionRatio={intersectionRatio}>
+    <Image src={src} alt="Image alt" />
+  </ImageContainer>
+)
 
 const ResizeComponent = ({ src, id, country, city }) => {
-  const elementRef = useRef(null);
+  const elementRef = useRef(null)
   const [intersectionRatio, entry] = useIntersectionObserver(elementRef, {
-    threshold: 0
-  });
+    threshold: 0,
+  })
 
   if (id % 2 === 0) {
     return (
-      <ResizeContainer innerRef={elementRef} id={id} key={id}>
-        <Text country={country} city={city} /> <Image intersectionRatio={intersectionRatio} src={src} />
-      </ResizeContainer>
+      <Container innerRef={elementRef} id={id} key={id}>
+        <Text country={country} city={city} /> <ResizingImage intersectionRatio={intersectionRatio} src={src} />
+      </Container>
     )
   }
   return (
-    <ResizeContainer innerRef={elementRef} id={id} key={id}>
-      <Image intersectionRatio={intersectionRatio} src={src} /> <Text country={country} city={city} />
-    </ResizeContainer>
+    <Container innerRef={elementRef} id={id} key={id}>
+      <ResizingImage intersectionRatio={intersectionRatio} src={src} /> <Text country={country} city={city} />
+    </Container>
   )
 }
 

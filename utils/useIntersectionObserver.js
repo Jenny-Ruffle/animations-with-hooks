@@ -11,13 +11,13 @@ export const useIntersectionObserver = (ref, {
     rootMargin
 }) => {
     const [state, setState] = useState({
-        intersectionRatio: undefined,
+        intersectionRatio: 1,
         entry: undefined,
     })
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            throttle(300, (entries, observerInstance) => {
+            throttle(200, (entries, observerInstance) => {
                 // checks to see if the element is intersecting
                 if (entries[0].intersectionRatio > 0) {
                     // if it is update the state, we set triggered as to not re-observe the element
