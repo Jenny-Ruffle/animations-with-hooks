@@ -3,7 +3,7 @@ import PetronasTowers from './images/KL.jpg'
 import Monkeys from './images/monkeys.jpg'
 import Perhentian from './images/perhentian.jpg'
 
-const ioArray  = [
+const imageArray  = [
   {
     src: CameronHighlands,
     city: 'Cameron Highlands',
@@ -14,4 +14,4 @@ const ioArray  = [
   { src: Perhentian, city: 'Perhentian Islands', country: 'Malaysia' }
 ]
 
-export default ioArray
+export default imageArray

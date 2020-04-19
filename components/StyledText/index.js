@@ -21,11 +21,12 @@ const headingMedium = ({ color = 'black', fontWeight = 'normal' }) => ({
 
 export const HeadingMedium = createComponent(headingMedium, 'h1')
 
-const paragraph = () => ({
+const paragraph = ({extraStyles = {}}) => ({
   font: '12px/18px Verdana, serif',
-  margin: '0 0 16px 0',
   padding: 0,
-  fontColor: 'black'
+  margin: '0 0 16px 0',
+  fontColor: 'black',
+  ...extraStyles
 })
 
 export const Paragraph = createComponent(paragraph, 'p')
