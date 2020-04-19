@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { createComponent } from 'react-fela'
-import getScreenHeight from '../../utils/getScreenHeight'
-import getBoundingClient from '../../utils/getBoundingClient'
+import useScreenHeight from '../../utils/useScreenHeight'
+import useBoundingClient from '../../utils/useBoundingClient'
 
 const container = () => ({
   display: 'flex',
@@ -38,8 +38,8 @@ const getFadeInOpacity = (boundingClient, screenHeight) => {
 
 const ImageWrapper = ({ children, fadeIn }) => {
   const ref = useRef()
-  const boundingClient = getBoundingClient(ref)
-  const screenHeight = getScreenHeight().height
+  const boundingClient = useBoundingClient(ref)
+  const screenHeight = useScreenHeight().height
   const opacity = fadeIn ? getFadeInOpacity(boundingClient, screenHeight) : getFadeOutOpacity(boundingClient, screenHeight)
   return (
     <ImageContainer opacity={opacity} innerRef={ref}>

@@ -1,5 +1,4 @@
-export const animationData = [
-  {
+export const animationData = [{
     animationName: 'Fade on scroll',
     animationDescription: 'Using intersection observer',
     animationKey: 'fade-scroll-io',
@@ -29,23 +28,30 @@ export const animationData = [
   },
   {
     animationName: 'Parallax Image',
-    animationDescription: 'Parallax Imagery, shifting behaviour on scroll',
+    animationDescription: 'Parallax Imagery with overlaying content',
     animationKey: 'parallax-image',
     navigationName: 'Parallax Image',
     key: '5'
+  },
+  {
+    animationName: 'Shifting Parallax Image',
+    animationDescription: 'Parallax Imagery, shifting behaviour on scroll',
+    animationKey: 'shifting-parallax-image',
+    navigationName: 'Shifting Parallax Image',
+    key: '6'
   },
   {
     animationName: 'Slide gallery',
     animationDescription: 'Overlapping slide behaviour using sticky',
     animationKey: 'slide-gallery',
     navigationName: 'Slide Gallery',
-    key: '6'
+    key: '7'
   },
   {
     animationName: 'Sticky carousel',
     animationDescription: 'Carousel behaviour with vertical numbered pips',
     animationKey: 'sticky-vertical-carousel',
     navigationName: 'Sticky Carousel',
-    key: '7'
+    key: '8'
   }
 ]
