@@ -4,7 +4,8 @@ import { Paragraph } from '../StyledText'
 
 const container = ({ height = '300px' }) => ({
   height,
-  margin: '160px 10% 0',
+  margin: '80px 10% ',
+  padding: '30px 0',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
