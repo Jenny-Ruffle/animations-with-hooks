@@ -4,7 +4,7 @@ import { Paragraph } from '../StyledText'
 
 const container = ({ height = '300px' }) => ({
   height,
-  margin: '0 10%',
+  margin: '160px 10% 0',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -14,9 +14,9 @@ const container = ({ height = '300px' }) => ({
 
 export const PaddingContainer = createComponent(container, 'div')
 
-export const LatinText = () => (
-  <PaddingContainer height="500px">
-    <Paragraph>
+export const LatinText = ({extraStyles}) => (
+  <PaddingContainer height="auto">
+    <Paragraph extraStyles={extraStyles}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ante urna, dapibus eget mauris eu, tincidunt varius lacus. Etiam in tempus sem. Etiam eu
       commodo lacus. Sed quam orci, consectetur a enim ac, auctor rutrum libero. In egestas mi sed fermentum consectetur. In cursus molestie tortor. Quisque
       convallis ultrices leo, cursus bibendum massa pellentesque sit amet. Nullam aliquet, orci sed dapibus tempor, libero quam tincidunt elit, tempor porttitor
