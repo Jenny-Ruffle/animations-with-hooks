@@ -1,7 +1,7 @@
 import React from 'react'
 import { createComponent } from 'react-fela'
-import { HeadingMedium, Paragraph } from '../StyledText'
 import Link from 'next/link'
+import { HeadingMedium, Paragraph } from '../StyledText'
 
 const container = () => ({
   padding: '20px 16px 10px',

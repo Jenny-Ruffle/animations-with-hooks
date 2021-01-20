@@ -1,7 +1,7 @@
 import React, {useRef, useState, useEffect} from 'react'
 import { createComponent } from 'react-fela'
-import { LatinText } from '../SpacingComponents'
 import throttle from 'lodash/fp/throttle'
+import { LatinText } from '../SpacingComponents'
 
 const image = ({index, imageTop = 0}) => ({
   width: '100%',
