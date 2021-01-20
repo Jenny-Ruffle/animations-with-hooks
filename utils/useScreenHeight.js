@@ -7,7 +7,7 @@ function getHeight() {
   }
 }
 
-export default () => {
+const useScreenHeight = () => {
   const [height, setHeight] = useState(0)
 
   const handleResize = throttle(250, () => {
@@ -24,3 +24,5 @@ export default () => {
 
   return height
 }
+
+export default useScreenHeight;

@@ -29,9 +29,9 @@ const slideImage = () => ({
 })
 const SlideImage = createComponent(slideImage, 'img', ['src'])
 
-const Slide = ({ zIndex, imageSrc }) => {
+const Slide = ({ key, zIndex, imageSrc }) => {
   return (
-    <SlideWrapper zIndex={zIndex}>
+    <SlideWrapper key={key} zIndex={zIndex}>
       <SlideImage src={imageSrc} />
     </SlideWrapper>
   )
@@ -40,7 +40,7 @@ const Slide = ({ zIndex, imageSrc }) => {
 const StickySlides = ({ images }) => (
   <SlideContainer>
     {images.map((item, index) => (
-      <Slide zIndex={(index + 1) * 2} imageSrc={item} />
+      <Slide key={index} zIndex={(index + 1) * 2} imageSrc={item} />
     ))}
   </SlideContainer>
 )

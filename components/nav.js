@@ -29,6 +29,7 @@ const dropdownButton = () => ({
   outline: 'none',
   height: '30px',
   padding: '0 0 0 4px',
+  backgroundColor: 'white',
   ':hover': {
     cursor: 'pointer'
   }
@@ -86,7 +87,7 @@ const Navigation = ({ animations }) => {
         </DropdownButton>
         <DropdownList open={dropdownOpen}>
           {animations.map((item, index) => (
-            <Link href={`/${item.animationKey}`}>
+            <Link key={index} href={`/${item.animationKey}`}>
               <PageLink>{item.navigationName}</PageLink>
             </Link>
           ))}
