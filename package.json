@@ -16,7 +16,7 @@
     "babel-eslint": "^10.1.0",
     "fela-dom": "^11.5.2",
     "fela-preset-web": "^11.5.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "next": "10.0.5",
     "next-images": "^1.7.0",
     "react": "17.0.1",
